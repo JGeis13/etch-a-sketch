@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#main {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-container {
+  display: grid;
+  flex: 1 1 auto;
+  grid-template-columns: repeat(16, 1fr);
+  grid-template-rows: repeat(16, 1fr);
+  gap: 1px;
+}
+
+.grid-square {
+  background: rgb(225, 225, 225);
+}
+
+.grid-square.filled {
+  background: rgb(96, 96, 96);
+}
+
+.grid-square.hovered {
+  background: rgb(162, 162, 162);
+}
