@@ -31,9 +31,13 @@
   background: rgb(162, 162, 162);
 }
 
+.buttons-container {
+  text-align: center;
+}
+
 #clear {
   padding: 0.5rem;
   margin: 0.5rem;
-  background: rgb(106, 106, 106);
+  background: rgb(135, 135, 135);
   color: white;
 }
