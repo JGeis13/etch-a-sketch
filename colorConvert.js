@@ -1,18 +1,29 @@
-function darken(hex, amount) {
+function darkenHex(hex, amount) {
   let r = parseInt(hex.substr(1, 2), 16),
     g = parseInt(hex.substr(3, 2), 16),
     b = parseInt(hex.substr(5, 2), 16);
 
-  console.log(r, g, b);
-
   let newColor = "#";
 
   [r, g, b].forEach((c) => {
-    console.log(Math.max(0, Math.round(c - 255 * amount)));
-    newColor += Math.max(0, Math.round(c - 255 * amount)).toString(16);
+    newC = Math.max(0, Math.round(c - 255 * amount)).toString(16);
+    newColor += newC.length < 2 ? "0" + newC : newC;
   });
 
-  return;
+  return newColor;
+}
+
+function rgbToHex(rgb) {
+  let [r, g, b] = rgb.match(/\d+/g);
+  return (
+    "#" +
+    [+r, +g, +b]
+      .map((c) => {
+        c = c.toString(16);
+        return c.length < 2 ? "0" + c : c;
+      })
+      .join("")
+  );
 }
 
 function randomHex() {
@@ -24,8 +35,4 @@ function randomHex() {
   }
 
   return hex;
-}
-
-for (let i = 0; i < 20; i++) {
-  console.log(randomHex());
 }

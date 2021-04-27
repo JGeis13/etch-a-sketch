@@ -34,9 +34,14 @@ const getGridSizeFromUser = () => {
 
 const hoverSquareHandler = (e) => {
   if (e.target.classList.contains("grid-square")) {
-    e.target.classList.add("hovered");
-    // e.target.classList.add("filled");
-    e.target.style.background = randomHex();
+    // e.target.classList.add("hovered");
+    if (e.target.classList.contains("filled")) {
+      let currentColor = e.target.style.background;
+      e.target.style.background = darkenHex(rgbToHex(currentColor), 0.1);
+    } else {
+      e.target.style.background = randomHex();
+      e.target.classList.add("filled");
+    }
   }
 };
 

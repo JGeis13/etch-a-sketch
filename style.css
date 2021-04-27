@@ -22,9 +22,9 @@
   background: rgb(225, 225, 225);
 }
 
-.grid-square.filled {
+/* .grid-square.filled {
   background: rgb(96, 96, 96);
-}
+} */
 
 .grid-square.hovered {
   background: rgb(162, 162, 162);
